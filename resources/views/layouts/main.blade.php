@@ -12,7 +12,7 @@
       {!!Html::style('css/style.css')!!}
        {!!Html::style('css/parsley.css')!!}
         {!!Html::script('js/modernizr.js')!!}
-      </head>
+            </head>
     <body class="fixed-left">
 
         <div id="wrapper">
