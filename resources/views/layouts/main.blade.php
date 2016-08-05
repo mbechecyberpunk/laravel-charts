@@ -2,7 +2,7 @@
 
 <html>
     <head>
-        <title>Mobile Money Analytics</title>
+        <title>Laravel 5.2-Google charts</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="IE=edge" />
         {!!Html::style('css/bootstrap.min.css')!!}
@@ -64,7 +64,7 @@
                         <div class="clearfix">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <img src="images/user.png" alt="" class="pull-left">
-                                <span>Angila Deo <br><em>Admin</em></span>
+                                <span>Mbeche Steve<br><em>Admin</em></span>
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">Account</a></li>
@@ -86,7 +86,7 @@
                     <li class="profile-menu visible-xs">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <img src="images/user.png" alt="" class="pull-left">
-                            <span>Angila Deo <br><em>Admin</em></span>
+                            <span>Mbeche Steve<br><em>Admin</em></span>
                         </a>
                         <ul class="dropdown-menu profile-drop">
                             <li><a href="#">Account</a></li>
@@ -96,27 +96,7 @@
                     </li>
                     <li class="active"><a href="/"><i class="fa fa-home"></i>  <span>Dashboard</span></a></li>
 
-                    <li>
-                        <a href="#"><i class="fa fa-envelope"></i> <span>Mailbox </span><span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level collapse">
-                            <li><a href="mailbox.html">Inbox</a></li>
-                            <li><a href="mail_detail.html">Email view</a></li>
-                            <li><a href="mail_compose.html">Compose email</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-user"></i> <span>Agents</span><span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level collapse">
 
-                            <li><a href="#"><i class="fa fa-user"></i> AgentsCompliance</a></li>
-                            <li><a href="#"><i class="fa fa-user"></i> AgentsCompliance</a></li>
-                            <li><a href="#"><i class="fa fa-user"></i> Agents Concentrations</a></li>
-                            <li><a href="#"><i class="fa fa-user"></i> Agents Visit History</a></li>
-                            <li><a href="#"><i class="fa fa-user"></i> Questionnaire</a></li>
-                            <li><a href="{{route('analytics.index')}}"><i class="fa fa-signal"></i> Analytics</a></li>
-                              <li><a href="{{route('questions.index')}}"</a><i class="fa fa-user"></i> Agents Visits</li>
-                        </ul>
-                    </li>
 
 
               </ul>
@@ -126,19 +106,7 @@
                 <div class="content">
                     <div class="container">
 
-                        @if(Session::has('success'))
-                        <div class="alert alert-success" role="alert">
-                        <strong>Success:</strong> {{Session::get('success')}}
 
-                        </div>
-                      @endif
-                      @if($errors->has())
-                    @foreach ($errors->all() as $error)
-                    <div class="alert alert-danger" role="alert">
-                    <div>{{ $error }}</div>
-                  </div>
-                   @endforeach
-                   @endif
 
 
                       @yield('content')
