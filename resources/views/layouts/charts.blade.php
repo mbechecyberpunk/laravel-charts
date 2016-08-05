@@ -1,51 +1,62 @@
-  <html>
+<html>
   <head>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
+
+      // Load Charts and the corechart and barchart packages.
       google.charts.load('current', {'packages':['corechart']});
+
+      // Draw the pie chart and bar chart when Charts is loaded.
       google.charts.setOnLoadCallback(drawChart);
-      google.charts.setOnLoadCallback(drawCharts);
 
       function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Year', 'Sales', 'Expenses'],
-          ['2004',  1000,      400],
-          ['2005',  1170,      460],
-          ['2006',  660,       1120],
-          ['2007',  1030,      540]
+
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+          ['Mushrooms', 3],
+          ['Onions', 1],
+          ['Olives', 1],
+          ['Zucchini', 1],
+          ['Pepperoni', 2]
         ]);
 
-        var options = {
-          title: 'Company Performance',
-          curveType: 'function',
-          legend: { position: 'bottom' }
-        };
+        var piechart_options = {title:'Pie Chart: How Much Pizza I Ate Last Night',
+                       width:600,
+                       height:300};
+        var piechart = new google.visualization.PieChart(document.getElementById('piechart_div'));
+        piechart.draw(data, piechart_options);
 
-        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+        var barchart_options = {title:'Bar chart: How Much Pizza I Ate Last Night',
+                       width:600,
+                       height:300,
+                       legend: 'none'};
+        var barchart = new google.visualization.BarChart(document.getElementById('barchart_div'));
+        barchart.draw(data, barchart_options);
 
-        chart.draw(data, options);
+        var linechart_options = {title:'Line Chart: How Much Pizza I Ate Last Night',
+                       width:600,
+                       height:300};
+        var linechart = new google.visualization.LineChart(document.getElementById('linechart_div'));
+        linechart.draw(data, linechart_options);
+
+        var columnchart_options = {title:'Column Chart: How Much Pizza I Ate Last Night',
+                       width:600,
+                       height:300};
+        var columnchart = new google.visualization.ColumnChart(document.getElementById('columnchart_div'));
+        columnchart.draw(data, columnchart_options);
+        var piechart_options = {title:'Donut Chart: How Much Pizza I Ate Last Night',
+                       width:600,
+                       height:300,
+                       pieHole: 0.5};
+        var piechart = new google.visualization.PieChart(document.getElementById('donutchart_div'));
+        piechart.draw(data, piechart_options);
+        var piechart_options = {title:'Area Chart: How Much Pizza I Ate Last Night',
+                       width:600,
+                       height:300,
+                       pieHole: 0.5};
+        var piechart = new google.visualization.AreaChart(document.getElementById('areachart_div'));
+        piechart.draw(data, piechart_options);
       }
-
-      function drawCharts() {
-        var data = google.visualization.arrayToDataTable([
-          ['Year', 'Sales', 'Expenses', 'Profit'],
-          ['2014', 1000, 400, 200],
-          ['2015', 1170, 460, 250],
-          ['2016', 660, 1120, 300],
-          ['2017', 1030, 540, 350]
-        ]);
-
-        var options = {
-          chart: {
-            title: 'Company Performance',
-            subtitle: 'Sales, Expenses, and Profit: 2014-2017',
-          },
-          bars: 'horizontal' // Required for Material Bar Charts.
-        };
-
-        var chart = new google.charts.Bar(document.getElementById('barchart_material'));
-
-        chart.draw(data, options);
-      }
-    </script>
-    
+</script>

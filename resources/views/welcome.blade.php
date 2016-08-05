@@ -4,14 +4,36 @@
   <div class="row">
 
   <div class="col-md-6">
-    <h3>Line Chart</h3>
-    <hr>
-  <div id="curve_chart" style="width: auto; height:auto"></div>
+
+  <div id="piechart_div" style="width: auto; height:auto"></div>
 </div>
 <div class="col-md-6">
-  <h3>Bar Chart</h3>
-  <hr>
- <div id="barchart_material" style="width: auto; height: auto;"></div>
+  
+ <div id="barchart_div" style="width: auto; height: auto;"></div>
 </div>
+</div>
+<br>
+<div class="row">
+<div class="col-md-6">
+
+ <div id="linechart_div" style="width: auto; height: auto;"></div>
+</div>
+<div class="col-md-6">
+
+ <div id="columnchart_div" style="width: auto; height: auto;"></div>
+</div>
+</div>
+<br>
+<div class="row">
+<div class="col-md-6">
+
+ <div id="donutchart_div" style="width: auto; height: auto;"></div>
+</div>
+<div class="col-md-6">
+
+ <div id="areachart_div" style="width: auto; height: auto;"></div>
+</div>
+</div>
+
 </div>
 @endsection
